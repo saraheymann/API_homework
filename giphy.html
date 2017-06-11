@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Giphy API</title>
+</head>
+<body>
+	<div class="container"></div>
+		<h1>Cartoon GIFs</h1>
+		<!-- buttons -->
+		<div id="buttonsZone"></div>
+		<form id="gifForm">
+	      <label for="gifInput">Add a cartoon</label>
+	      <input type="text" id="gifInput"><br>
+
+	      <!-- Button triggers new movie to be added -->
+	      <input id="addGif" type="submit" value="Add a Cartoon">
+	    </form>
+	<div id=gifView></div>
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript">
+		var topics = ['Betty Boop', 'Jem', 'Ren'];
+
+		function getCartoon(){
+			var cartoonName = $(this).attr("data-name");
+			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + cartoonName + "&api_key=dc6zaTOxFJmzC";
+			$.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function(response) {
+        	console.log(response.data)
+        	$("#gifView").append(cartoonName);
+
+        	var searchName = response.data.type;
+        	$("#gifView").html(searchName);
+
+        })
+		}
+
+		function makeButtons(){
+			$("#buttonsZone").empty();
+			for (var i = 0; i < topics.length; i++) {
+				var addButtonTag = $("<button>");
+				addButtonTag.addClass("cartoonName");
+				addButtonTag.attr("data-name", topics[i]);
+				addButtonTag.text(topics[i]);
+				$("#buttonsZone").append(addButtonTag);
+
+			}
+		}
+
+		$("#addGif").on("click", function(event) {
+        event.preventDefault();
+
+        var cartoon = $("#gifInput").val().trim();
+
+        topics.push(cartoon);
+
+        makeButtons();
+        });
+
+        $(document).on("click", ".cartoonName", getCartoon);
+        makeButtons();
+
+
+
+
+
+	</script>
+
+
+
+</body>
+</html>
