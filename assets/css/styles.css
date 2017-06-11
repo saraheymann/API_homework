@@ -1,0 +1,47 @@
+body{
+	font-family: 'Comfortaa', cursive;
+}
+h1{
+	text-align: center;
+	font-size: 50px;
+}
+
+#buttonsZone{
+	background-color: pink;
+}
+button{
+	margin: 20px;
+	font-family: 'Comfortaa', cursive;
+	font-size: 15px;
+	padding: 10px;
+	border-radius: 25px;
+
+}
+form{
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 20px;
+	font-size: 30px;
+}
+#gifView{
+	margin-left: 100px;
+}
+#gifInput{
+	border: 2px solid;
+}
+#addGif{
+	font-family: 'Comfortaa', cursive;
+	background-color: lightyellow;
+	border-radius: 25px;
+}
+.gifDiv{
+	float: left;
+	margin-left: 100px;
+	width: 300px;
+}
+.gif{
+	margin:10px;
+}
+p{
+	margin: 0;
+}
