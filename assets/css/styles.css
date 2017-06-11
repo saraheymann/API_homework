@@ -23,25 +23,28 @@ form{
 	margin-left: 20px;
 	font-size: 30px;
 }
-#gifView{
-	margin-left: 100px;
-}
+
+
 #gifInput{
 	border: 2px solid;
 }
+
 #addGif{
 	font-family: 'Comfortaa', cursive;
 	background-color: lightyellow;
 	border-radius: 25px;
 }
+#gifView{
+	margin: 50px;
+}
+
 .gifDiv{
 	float: left;
-	margin-left: 100px;
-	width: 300px;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 220px;
 }
-.gif{
-	margin:10px;
-}
-p{
-	margin: 0;
-}
+
+/*.gif{
+	margin:15px;
+}*/
